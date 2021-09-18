@@ -1,16 +1,17 @@
 const instructorWithLongestName = function(instructors) {
-  var longestName = {
+  let result = {
     name: "",
     course: ""
   };
-  
-  instructors.forEach(function (instructor) {
-    if(instructor.name.length > longestName.name.length) {
-      longestName = instructor;
+
+  for (let instructor of instructors) {
+    if (instructor['name'].length > result['name'].length) {
+      result = instructor;
     }
-  });
-  return longestName;
+  }
+  return result;
 };
+
 
 console.log(instructorWithLongestName([
   {name: "Samuel", course: "iOS"},
@@ -23,3 +24,8 @@ console.log(instructorWithLongestName([
   {name: "David", course: "iOS"},
   {name: "Domascus", course: "Web"}
 ]));
+
+
+// expected output:
+// {name: "Jeremiah", course: "Web"}
+// {name: "Domascus", course: "Web"}
