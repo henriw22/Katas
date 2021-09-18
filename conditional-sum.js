@@ -1,20 +1,22 @@
 const conditionalSum = function(values, condition) {
-  let sum = 0;
+  let result = 0;
+  
   if (condition === "even") {
     for (let i = 0; i < values.length; i++) {
       if (values[i] % 2 === 0) {
-      sum = sum + values[i];
+        result += values[i];
       }
     }
   } else if (condition === "odd") {
     for (let i = 0; i < values.length; i++) {
-      if (values[i] % 2 != 0) {
-        sum = sum + values[i];
+      if (values[i] % 2 !== 0) {
+        result += values[i];
       }
     }
   }
-  return sum;
+  return result;
 };
+
 
 console.log(conditionalSum([1, 2, 3, 4, 5], "even"));
 console.log(conditionalSum([1, 2, 3, 4, 5], "odd"));
