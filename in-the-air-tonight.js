@@ -1,16 +1,34 @@
+// const checkAir = function (samples, threshold) {
+//   let count = 0;
+//   let totalCount = samples.length;
+//   for (let i = 0; i < samples.length; i++) {
+//     if (samples[i] === "dirty") {
+//       count++;
+//     }
+//   }
+  
+//   if (count / totalCount < threshold) {
+//     return "Clean";
+//   } else {
+//     return "Polluted"
+//   }
+// };
+
+
 const checkAir = function (samples, threshold) {
-  let count = 0;
-  let totalCount = samples.length;
-  for (let i = 0; i < samples.length; i++) {
-    if (samples[i] === "dirty") {
-      count++;
+  let clean = 0;
+  let dirty = 0;
+  for (let sample of samples) {
+    if (sample === "clean") {
+      clean++;
+    } else {
+      dirty++;
     }
   }
-  
-  if (count / totalCount < threshold) {
-    return "Clean";
+  if ((dirty / (clean + dirty)) > threshold) {
+    return "Polluted";
   } else {
-    return "Polluted"
+    return "Clean";
   }
 };
 
